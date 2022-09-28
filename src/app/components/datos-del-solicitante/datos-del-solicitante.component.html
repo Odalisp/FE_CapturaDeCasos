@@ -1,0 +1,230 @@
+<div class="title">
+    <mat-grid-list cols="1" rowHeight="35">
+       <!-- <mat-grid-tile cols="1" row="1px">
+            <div>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>dialpad</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                      <mat-icon>more_vert</mat-icon>
+                      <span>Redial</span>
+                    </button>
+                    <button mat-menu-item disabled>
+                      <mat-icon>voicemail</mat-icon>
+                      <span>Check voice mail</span>
+                    </button>
+                    <button mat-menu-item>
+                      <mat-icon>notifications_off</mat-icon>
+                      <span>Disable alerts</span>
+                    </button>
+                  </mat-menu>
+            </div>
+        </mat-grid-tile>-->
+        <mat-grid-tile>
+            <div>
+                <h1>SOLICITUD DE SERVICIO</h1>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>  
+</div>
+<div class="label">
+    <h2>Datos del Solicitante
+        <hr>
+    </h2>
+</div>
+
+<!-- Formulario para agregar el solicitante -->
+<div class="conteiner">
+    <mat-card class="card">
+        <mat-card-subtitle>
+            Datos del Solicitante
+        </mat-card-subtitle>
+
+        <form [formGroup]="form" (ngSubmit)="agregarDatos()">
+                <!-- Parentesco del solicitante con el imputado -->
+                
+                <mat-form-field appearance="outline">
+                    <mat-label>Parentesco</mat-label>
+                    <mat-select>
+                        <mat-option value="familiar">Familiar</mat-option>
+                        <mat-option value="Conyugue">Conyugue</mat-option>
+                        <mat-option value="Amistad">Amistad</mat-option>
+                        <mat-option value="Usuario">Usuario</mat-option>
+                    </mat-select>
+                </mat-form-field> 
+            <!-- Datos del solicitante -->
+            <mat-grid-list cols="2" rowHeight="80px">
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Cedula</mat-label>
+                        <input formControlName="cedula" matInput placeholder="Identificacion">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nombre</mat-label>
+                        <input formControlName="nombre" matInput placeholder="Nombre">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Apellido</mat-label>
+                        <input formControlName="apellido" matInput placeholder="Apellido">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Contacto</mat-label>
+                        <input formControlName="contacto" matInput placeholder="Contacto">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+            </mat-grid-list>
+        </form>
+    </mat-card>
+</div>
+<div class="label">
+    <h2>Datos del Imputado
+        <hr>
+    </h2>
+</div>
+
+<!-- Formulario para agregar al imputado -->
+<div class="conteiner">
+    <mat-card class="card">
+        <mat-card-subtitle>
+            Datos del Imputado
+        </mat-card-subtitle>
+
+        <form [formGroup]="form" (ngSubmit)="agregarDatos()">
+ 
+            <!-- Datos del imputado -->
+            <mat-grid-list cols="2" rowHeight="80px">
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Cedula</mat-label>
+                        <input formControlName="cedula" matInput placeholder="Identificacion">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nombre</mat-label>
+                        <input formControlName="nombre" matInput placeholder="Nombre">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Apellido</mat-label>
+                        <input formControlName="apellido" matInput placeholder="Apellido">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Apodo</mat-label>
+                        <input formControlName="apodo" matInput placeholder="Apodo">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Fecha de Nacimiento</mat-label>
+                        <input formControlName="fechaNacimiento" matInput placeholder="fechaNacimiento">
+                    </mat-form-field>
+                </mat-grid-tile> 
+                
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nacionalidad</mat-label>
+                        <input formControlName="nacionalidad" matInput placeholder="Nacionalidad">
+                    </mat-form-field>
+                </mat-grid-tile>
+                
+            </mat-grid-list>
+            <mat-form-field appearance="outline">
+                <mat-label>Sexo</mat-label>
+                <mat-select>
+                    <mat-option value="Femenino">Masculino</mat-option>
+                    <mat-option value="Masculino">Femenino</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Estado Civil</mat-label>
+                <mat-select>
+                    <mat-option value="Soltero/a">Soltero/a</mat-option>
+                    <mat-option value="Casado/a">Casado/a</mat-option>
+                    <mat-option value="Union libre">Union libre</mat-option>
+                    <mat-option value="Viudo/a">Viudo/a</mat-option>
+                    <mat-option value="Divorciado/a">Divorciado/a</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+    </mat-card>
+</div>
+
+<div class="label">
+    <h2>Datos de Localización y Contacto de Imputado
+        <hr>
+    </h2>
+</div>
+
+<!-- Formulario para agregar informacion del imputado -->
+<div class="conteiner">
+    <mat-card class="card">
+        <mat-card-subtitle>
+            Datos de Localización y Contacto de Imputado
+        </mat-card-subtitle>
+
+        <form [formGroup]="form" (ngSubmit)="agregarDatos()">
+                 
+            <!-- Datos del imputado -->
+            <mat-grid-list cols="2" rowHeight="80px">
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Direccion</mat-label>
+                        <input formControlName="direccion" matInput placeholder="Direccion">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Ciudad</mat-label>
+                        <input formControlName="ciudad" matInput placeholder="Ciudad">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Telefono</mat-label>
+                        <input formControlName="telefono" matInput placeholder="Telefono">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Ocupación</mat-label>
+                        <input formControlName="ocupacion" matInput placeholder="Ocupación">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Idioma</mat-label>
+                        <input formControlName="idioma" matInput placeholder="Idioma">
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+                
+            <mat-form-field appearance="outline">
+                <mat-label>Interprete</mat-label>
+                <mat-select>
+                    <mat-option value="Si">Si</mat-option>
+                    <mat-option value="No">No</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <!-- Area del boton -->
+            <mat-grid-list cols="2" rowHeight="80px">
+                <mat-grid-tile>
+                    <button type="submit" mat-flat-button color="primary" class="btn">Enviar</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+            
+        </form>
+    </mat-card>
+</div>
